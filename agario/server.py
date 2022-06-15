@@ -1,6 +1,7 @@
 import socket
 import time
 import pickle
+import logging
 import _thread
 import random
 PORT = 5001
@@ -135,6 +136,8 @@ class GameServer():
     def run(self):
         while True:
             c, addr = self.netwok.s.accept()
+            ip, host = c.getpeername()
+            logging.warning(f"connection from {ip}:{host}")
             if self.count == 0:
                 _thread.start_new_thread(self.counter, ())
             _thread.start_new_thread(self.on_new_client, (c, addr, self.count))
