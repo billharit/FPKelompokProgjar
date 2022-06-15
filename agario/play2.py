@@ -26,7 +26,7 @@ class Player:
     
     #Text on Blob indication this player's blob
     def renderText(self):
-        text = "User"
+        text = "Player2"
         font = pygame.font.SysFont('Consolas', int(self.r/2))
         screen.blit(font.render(text, True, (255,255, 255)), (int(self.x-self.r/2), int(self.y-(self.r/4))))
     
