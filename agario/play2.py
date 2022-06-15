@@ -32,15 +32,16 @@ class Player:
     
     #Operations to be performed on key press(i.e moving the player Blob)
     def key_operation(self):
+        movespeed = 1.5
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT] and (self.x>50+self.r or (self.x>0+self.r and self.y>50+self.r)):
-            self.x-=0.25
+            self.x-=movespeed
         elif keys[pygame.K_RIGHT] and self.x<width-self.r:
-            self.x+=0.25
+            self.x+=movespeed
         elif keys[pygame.K_UP] and (self.y>50+self.r or (self.y>0+self.r and self.x>50+self.r)):
-            self.y-=0.25
+            self.y-=movespeed
         elif keys[pygame.K_DOWN] and self.y<height-self.r:
-            self.y+=0.25
+            self.y+=movespeed
 
     #Get the position of blob
     def getposition(self):
