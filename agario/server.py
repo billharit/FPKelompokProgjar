@@ -15,7 +15,7 @@ class ClientProcess():
         HEADER_LENGTH = 10
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # using self.s.bind(("ipv4 address wifi",PORT)) to connect with other device
-        self.s.bind(("localhost", PORT))
+        self.s.bind(("192.168.43.165", PORT))
         self.s.listen(5)
         print(f'Listening on port {PORT}')
 
@@ -36,8 +36,8 @@ class GameServer():
     def __init__(self):
         self.randomlist = []
         self.fullMsg = []
-        self.flag1 = 1
-        self.flag2 = 1
+        # self.flag1 = 1
+        # self.flag2 = 1
         self.fullMsg = []
         self.completedata = [[]]*5
         self.totalcount = 0
